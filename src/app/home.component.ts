@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataModelManagerService } from './data-model-manager.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   
-  constructor() { }
+  loggedIn: Boolean;
+
+  constructor(private m: DataModelManagerService) { }
 
   ngOnInit() {
+    this.loggedIn = this.m.loggedIn;
   }
 
 }

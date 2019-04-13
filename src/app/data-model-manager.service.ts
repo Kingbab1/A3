@@ -15,13 +15,13 @@ export class DataModelManagerService {
 
    // URL to the getters/putters/ anything else that is needed of the web service
    // all students
-  private students: string = "https://banana-pie-84184.herokuapp.com/api/students";
+  private students: string = "https://limitless-ocean-63331.herokuapp.com/api/students";
   //All Courses
-  private courses: string = "https://banana-pie-84184.herokuapp.com/api/courses";
+  private courses: string = "https://limitless-ocean-63331.herokuapp.com/api/courses";
   //All Cpa classes for winter 2019
-  private coursesCPA: string = "https://banana-pie-84184.herokuapp.com/api/courses/cpa";
+  private coursesCPA: string = "https://limitless-ocean-63331.herokuapp.com/api/courses/cpa";
   //All BSD classes for winter 2019
-  private coursesBSD: string = "https://banana-pie-84184.herokuapp.com/api/courses/bsd";
+  private coursesBSD: string = "https://limitless-ocean-63331.herokuapp.com/api/courses/bsd";
 
   // Options object for POST and PUT requests
   private httpOptions = {
@@ -50,6 +50,7 @@ export class DataModelManagerService {
   coursesPossibleCPA: Course[];
   coursesMatched: Course[];
   coursesSelected: Course[];
+  loggedIn: Boolean = false;
 
   // Get all the students
   studentGetAll(): Observable<Student[]> {
@@ -58,7 +59,12 @@ export class DataModelManagerService {
 
    //Get a specific student
    studentGetById(id: string): Observable<Student> {
-    return this.http.get<Student>(`${this.students}/${id}`);
+    return this.http.get<Student>(`${this.students}/username/${id}`);
+  }
+
+  // Get one
+  studentGetByUsername(username: string): Observable<Student> {
+    return this.http.get<Student>(`${this.students}/username/${username}`);
   }
 
   // Get all courses

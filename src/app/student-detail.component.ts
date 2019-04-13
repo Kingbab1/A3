@@ -24,8 +24,8 @@ export class StudentDetailComponent implements OnInit {
 
   ngOnInit() {
     
-    let id = this.route.snapshot.params['id'];
-    this.m.studentGetById(id).subscribe(u => this.student = u);
+    let userName = this.route.snapshot.params['userName'];
+    this.m.studentGetById(userName).subscribe(u => this.student = u);
     this.m.courseGetBSD().subscribe(c => this.coursesPossibleBSD = c);
     this.m.courseGetCPA().subscribe(c => this.coursesPossibleCPA = c);
     console.log(this.student)

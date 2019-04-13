@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row" *ngIf="student">
       <div class="col-md-7">
-        <h3>Select Courses - {{ student.givenName }} {{ student.familyName }}, {{ student.studentId }}&nbsp;&nbsp;<a routerLink="/students/detail/{{ student._id }}" class="btn btn-default">Back to {{student.givenName}}'s detail</a></h3>
+        <h3>Select Courses - {{ student.givenName }} {{ student.familyName }}, {{ student.studentId }}&nbsp;&nbsp;<a routerLink="/students/detail/{{ student.email }}" class="btn btn-default">Back to {{student.givenName}}'s detail</a></h3>
       </div>
       <div class="col-md-5">
           <span>Select courses, then save, or confirm your selections</span><br>
