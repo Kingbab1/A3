@@ -11,7 +11,6 @@ export class CreateComponent implements OnInit {
 
   private url: string = 'https://limitless-ocean-63331.herokuapp.com';
   credentials: Credentials;
-  register: Boolean = false;
 
   constructor(private http: HttpClient, private router: Router) {
     this.credentials = new Credentials();

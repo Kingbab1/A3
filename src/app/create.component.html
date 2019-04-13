@@ -47,7 +47,6 @@
   
         <a class="btn btn-default" routerLink='/home'>Back to home</a>&nbsp;
         <button class="btn btn-primary" type="submit" [disabled]="!f.form.valid">Register</button>&nbsp;&nbsp;
-        <span *ngIf='registerError.length>0' class="text-danger">{{ registerError }}</span>
       </form>
   
     </div>
